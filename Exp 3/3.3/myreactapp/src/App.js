@@ -32,25 +32,5 @@ function App() {
     </div>
   );
 }
-const styles = {
-  container: {
-    minHeight: "100vh",
-    padding: "40px",
-    backgroundColor: "#f8fafc",
-    fontFamily: "Arial, sans-serif",
-  },
-  title: {
-    textAlign: "center",
-    marginBottom: "30px",
-    color: "#0f172a",
-  },
-  card: {
-    backgroundColor: "#ffffff",
-    padding: "20px",
-    marginBottom: "15px",
-    borderRadius: "10px",
-    boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
-  },
-};
 
 export default App;
