@@ -3,3 +3,4 @@ node_modules/
 *.json
 package-lock.json
 *.pyc
+.gitignore
