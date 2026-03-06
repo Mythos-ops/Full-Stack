@@ -1,9 +1,9 @@
 const redis = require("redis");
 
 const client = redis.createClient({
-  url: process.env.REDIS_URL || "redis://localhost:6379",
+  url: process.env.REDIS_URL,
   socket: {
-    tls: process.env.REDIS_URL?.startsWith("rediss://"),
+    tls: true,
     reconnectStrategy: (retries) => {
       if (retries > 10) {
         return new Error("Max reconnection attempts reached");
@@ -13,7 +13,6 @@ const client = redis.createClient({
   }
 });
 
-// Event handlers
 client.on("connect", () => {
   console.log("Connected to Redis");
 });
@@ -26,7 +25,6 @@ client.on("error", (err) => {
   console.error("Redis error:", err);
 });
 
-// Connect once
 (async () => {
   try {
     await client.connect();
