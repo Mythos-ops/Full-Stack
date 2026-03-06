@@ -1,19 +1,20 @@
-const redis = require('redis');
+const redis = require("redis");
 
-// Create Redis client
 const client = redis.createClient({
-    host: process.env.REDIS_HOST || 'localhost',
-    port: process.env.REDIS_PORT || 6379,
-    socket: {
-        reconnectStrategy: (retries) => {
-            if (retries > 10) {
-                return new Error('Max reconnection attempts reached');
-            }
-            return retries * 100; // Reconnect after retries * 100ms
-        }
+  url: process.env.REDIS_URL || "redis://localhost:6379",
+  socket: {
+    reconnectStrategy: (retries) => {
+      if (retries > 10) {
+        return new Error("Max reconnection attempts reached");
+      }
+      return retries * 100;
     }
+  }
 });
 
+client.connect();
+
+module.exports = client;
 // Event handlers
 client.on('connect', () => {
     console.log('Connected to Redis');
