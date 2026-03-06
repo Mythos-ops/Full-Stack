@@ -1,5 +1,5 @@
 node_modules/
 .env
-employees.json
+*.json
 package-lock.json
 *.pyc
