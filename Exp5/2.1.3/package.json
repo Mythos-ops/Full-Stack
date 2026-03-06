@@ -1,0 +1,30 @@
+{
+  "name": "ecommerce-catalog",
+  "version": "1.0.0",
+  "description": "E-commerce product catalog with nested schemas, reviews, variants, and stock management",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "seed": "node scripts/seedData.js",
+    "test": "node scripts/testAggregations.js"
+  },
+  "keywords": [
+    "mongodb",
+    "mongoose",
+    "ecommerce",
+    "catalog",
+    "aggregation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "mongoose": "^7.8.9"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
